@@ -14,4 +14,13 @@ public class MyController {
  mo.addAttribute("arr",arr);
  return "memberList";
  }
+ 
+ @Autowired
+ private productRep prep;
+ @GetMapping("/product/list")
+ public String productList(Model mo) {
+ List<product> arr = prep.findAll(); 
+ mo.addAttribute("arr",arr);
+ return "productList";
+ }
 } // class

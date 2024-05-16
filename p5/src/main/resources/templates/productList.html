@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8">
+<title>낚시대</title></head>
+<style>
+body {background-color:skyblue;}
+table {width: 600px;}
+#td1 { color:blue; font-weight:bold; text-align:center;}
+#td2 { color:red; font-weight:bold; text-align:right;}
+</style>
+<body><div align="center">
+<h3> 낚시대 주문 리스트 (주문번호 순)</h3>
+<table border="1">
+ <tr> <th>주문번호 <th>id <th>낚시대 종류 <th>구매수량 <th>가입일시
+<tr th:each="a:${arr}"> 
+ <td th:text="${a.ordernum}" id="td1">ordernum
+ <td th:text="${a.id}">id
+ <td th:text="${a.fishingrod}">fishingrod
+ <td th:text="${a.buynum}" id="td2">buynum 
+ <td th:text="${a.rdate}">rdate
+</table>
+<br>
+<a href="/menu">메뉴로 돌아가기</a> 
+</div></body>
+</html>
